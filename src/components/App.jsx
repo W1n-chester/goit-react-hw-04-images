@@ -16,7 +16,7 @@ export const App = () => {
   const [request, setRequest] = useState('');
   const [imagesData, setImagesData] = useState([]);
   const [page, setPage] = useState(1);
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
 
   useEffect(() => {
     if (request === '') {
@@ -28,10 +28,10 @@ export const App = () => {
         setImagesData([...imagesData, ...data.hits]);
         setStatus(Status.RESOLVED);
       })
-      .catch(error => {
-        setError(error);
-        setStatus(Status.REJECTED);
-      });
+      .catch(
+        setStatus(Status.REJECTED)
+        
+      );
   }, [request, page]);
 
   const AddRequest = request => {
