@@ -9,7 +9,7 @@ export const Modal = ({ onToggleModal, children }) => {
     return () => {
       window.removeEventListener('keydown', closeModal);
     };
-  },[]);
+  });
 
   const closeModal = e => {
     if (e.code === 'Escape') {
