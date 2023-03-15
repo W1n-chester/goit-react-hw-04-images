@@ -25,14 +25,14 @@ export const App = () => {
     setStatus(Status.PENDING);
     fetchGalleryImages(page, request)
       .then(data => {
-        setImagesData([...imagesData, ...data.hits]);
+        setImagesData(imagesData => [...imagesData, ...data.hits]);
         setStatus(Status.RESOLVED);
       })
       .catch(
         setStatus(Status.REJECTED)
         
       );
-  }, [request, page]);
+  }, [request, page,]);
 
   const AddRequest = request => {
     setImagesData([]);
